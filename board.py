@@ -1,5 +1,4 @@
 class Board:
-
     def __init__(self, b):
         self.boardSize = b
         self.board = []
