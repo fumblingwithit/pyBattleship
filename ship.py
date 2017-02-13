@@ -12,3 +12,4 @@ class Ship:
     def printShip(self):
         for row in self.ship:
             print(" ".join(row))
+
