@@ -1,11 +1,14 @@
-#Stuff related to the game board itself goes here
-
-
 class Board:
-    boardSize = 0
-    board = []
 
     def __init__(self, b):
-        Board.boardSize = int(b)
-        for x in range(0,self.boardSize):
-            Board.board.append(["O"] * Board.boardSize)
+        self.boardSize = b
+        self.board = []
+
+        for x in range(0, self.boardSize):
+            self.board.append(["O"] * self.boardSize)
+
+    def is_on_board(self, x, y):
+        if (0 <= x < self.boardSize) and (0 <= y < self.boardSize):
+            return True
+        else:
+            return False
