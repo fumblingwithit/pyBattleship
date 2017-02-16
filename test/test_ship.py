@@ -8,7 +8,7 @@ class ShipTest(unittest.TestCase):
         start_x = 1
         start_y = 1
         size = 3
-        orientation = "horizontal"
+        orientation = 'H'
         test_ship = ship.Ship(start_x, start_y, size, orientation)
         self.assertEqual(start_x, test_ship.startX)
         self.assertEqual(start_x, test_ship.startX)

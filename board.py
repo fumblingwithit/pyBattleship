@@ -20,7 +20,7 @@ class Board:
 
     def place_ship(self, ship):
         if self.is_on_board(ship.startX, ship.startY):
-            if ship.orientation == "V":
+            if ship.orientation == 'V':
                 x = ship.startX
                 for x in range(ship.startX, ship.startX+ship.size):
                     self.place_piece(x, ship.startY)
@@ -49,7 +49,7 @@ class Board:
 
     def is_piece_set(self, x, y):
         if self.is_on_board(x, y):
-            if str(self.board[x][y-1]) == "S":
+            if str(self.board[x][y-1]) != 'O':
                 return True
             else:
                 return False
