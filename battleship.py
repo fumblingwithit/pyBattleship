@@ -21,19 +21,6 @@ def print_game():
     board.Board.print_board(playerBoard)
     print('-------------------')
 
-
-class Battleship:
-
-    def is_ship_hit(ship, targetX, targetY):
-        if (targetX < ship.startX or targetX > (ship.startX + ship.size)) or (
-                targetY < ship.startY or targetY > (ship.startY + ship.size)):
-            return False
-        else:
-            print('startX: %s startY: %s' % (ship.startX, ship.startY))
-            print('endX: %s endY: %s' % (ship.startX + ship.size, ship.startY + ship.size))
-            print('targetX: %s targetY: %s' % (targetX, targetY))
-            return True
-
 # ------------------- MAIN -------------------
 
 if __name__ == '__main__':
