@@ -23,15 +23,15 @@ class Board:
             if ship.orientation == "V":
                 x = ship.startX
                 for x in range(ship.startX, ship.startX+ship.size):
-                    self.set_piece(x, ship.startY)
+                    self.place_piece(x, ship.startY)
             else:
                 y = ship.startY
                 for y in range(ship.startY, ship.startY + ship.size):
-                    self.set_piece(ship.startX, y)
+                    self.place_piece(ship.startX, y)
 
         return True
 
-    def set_piece(self, x, y):
+    def place_piece(self, x, y):
         try:
             if not self.is_on_board(x, y):
                 raise Exception('not_on_board')
