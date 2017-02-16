@@ -12,6 +12,8 @@ ship2 = ship.Ship(5, 5, 3, 'H')
 
 def start_game():
     print("Let's play Battleship!")
+    playerBoard.place_ship(ship1)
+    playerBoard.place_ship(ship2)
 
 
 def print_game():
@@ -25,9 +27,6 @@ def print_game():
 
 if __name__ == '__main__':
     start_game()
-    print_game()
-    playerBoard.place_ship(ship1)
-    playerBoard.place_ship(ship2)
     print_game()
     print(playerBoard.attack_ship(3, 4))
     print(playerBoard.attack_ship(5, 6))
