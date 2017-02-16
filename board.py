@@ -5,7 +5,8 @@ class Board:
 
         for x in range(0, self.boardSize):
             value = str(x)
-            self.board.append([value] * self.boardSize)
+            self.board.append(['O'] * self.boardSize)
+#            self.board.append([value] * self.boardSize)
 
     def is_on_board(self, x, y):
         if (0 <= x < self.boardSize) and (0 <= y < self.boardSize):
@@ -24,8 +25,6 @@ class Board:
                 for x in range(ship.startX, ship.startX+ship.size):
                     self.set_piece(x, ship.startY)
             else:
-                print("startX: " + str(ship.startX))
-                print("startY: " + str(ship.startY))
                 y = ship.startY
                 for y in range(ship.startY, ship.startY + ship.size):
                     self.set_piece(ship.startX, y)
