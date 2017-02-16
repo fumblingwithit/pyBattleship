@@ -29,7 +29,13 @@ class Board:
                 for y in range(ship.startY, ship.startY + ship.size):
                     self.place_piece(ship.startX, y)
 
-        return True
+    def update_piece(self,x, y, value):
+        self.board[x].insert(y, value)
+        temp_board1 = self.board[x][:y].copy()
+        temp_board2 = self.board[x][y:].copy()
+        temp_board1.pop()
+        temp_board1.extend(temp_board2)
+        self.board[x] = temp_board1
 
     def place_piece(self, x, y):
         try:
@@ -37,12 +43,7 @@ class Board:
                 raise Exception('not_on_board')
             if self.is_piece_set(x, y):
                 raise Exception('piece_is_set')
-            self.board[x].insert(y, 'S')
-            temp_board1 = self.board[x][:y].copy()
-            temp_board2 = self.board[x][y:].copy()
-            temp_board1.pop()
-            temp_board1.extend(temp_board2)
-            self.board[x] = temp_board1
+            self.update_piece(x, y, 'S')
         except ValueError as err:
             print(err.args)
 
@@ -52,3 +53,11 @@ class Board:
                 return True
             else:
                 return False
+
+    def attack_ship(self, x, y):
+        if self.is_on_board(x, y):
+            if self.is_piece_set(x, y):
+                self.update_piece(x, y, 'X')
+                return 'Hit'
+            else:
+                return 'Miss'
