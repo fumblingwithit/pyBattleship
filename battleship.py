@@ -42,3 +42,6 @@ if __name__ == '__main__':
     playerBoard.place_ship(ship1)
     playerBoard.place_ship(ship2)
     print_game()
+    print(playerBoard.attack_ship(3, 4))
+    print(playerBoard.attack_ship(5, 6))
+    print_game()
