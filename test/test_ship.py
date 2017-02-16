@@ -4,17 +4,22 @@ import ship
 
 class ShipTest(unittest.TestCase):
 
+    def setUp(self):
+        self.start_x = 1
+        self.start_y = 1
+        self.size = 3
+        self.orientation = 'H'
+        self.testShip = ship.Ship(self.start_x, self.start_y, self.size, self.orientation)
+
     def test_create_ship(self):
-        start_x = 1
-        start_y = 1
-        size = 3
-        orientation = 'H'
-        test_ship = ship.Ship(start_x, start_y, size, orientation)
-        self.assertEqual(start_x, test_ship.startX)
-        self.assertEqual(start_x, test_ship.startX)
-        self.assertEqual(start_y, test_ship.startY)
-        self.assertEqual(size, test_ship.size)
-        self.assertEqual(orientation, test_ship.orientation)
+        self.assertEqual(self.start_x, self.testShip.startX)
+        self.assertEqual(self.start_x, self.testShip.startX)
+        self.assertEqual(self.start_y, self.testShip.startY)
+        self.assertEqual(self.size, self.testShip.size)
+        self.assertEqual(self.orientation, self.testShip.orientation)
+
+    def test_show_ship(self):
+        self.assertTrue(True,'Not implemented yet')
 
 if __name__ == '__main__':
     unittest.main()
