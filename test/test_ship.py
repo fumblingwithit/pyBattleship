@@ -12,9 +12,9 @@ class ShipTest(unittest.TestCase):
         self.testShip = ship.Ship(self.start_x, self.start_y, self.size, self.orientation)
 
     def test_create_ship(self):
-        self.assertEqual(self.start_x, self.testShip.startX)
-        self.assertEqual(self.start_x, self.testShip.startX)
-        self.assertEqual(self.start_y, self.testShip.startY)
+        self.assertEqual(self.start_x, self.testShip.start_x)
+        self.assertEqual(self.start_x, self.testShip.start_x)
+        self.assertEqual(self.start_y, self.testShip.start_y)
         self.assertEqual(self.size, self.testShip.size)
         self.assertEqual(self.orientation, self.testShip.orientation)
 
