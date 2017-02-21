@@ -9,8 +9,8 @@ class ShipTest(unittest.TestCase):
         self.start_y = 1
         self.size = 3
         self.orientation = 'H'
-        self.testShip1 = ship.Ship(self.start_x, self.start_y, self.size, self.orientation)
-        self.testShip2 = ship.Ship(self.start_x+1, self.start_y+1, self.size, 'V')
+        self.testShip1 = ship.Ship('testShip1', self.start_x, self.start_y, self.size, self.orientation)
+        self.testShip2 = ship.Ship('testShip2', self.start_x+1, self.start_y+1, self.size, 'V')
         self.testBoard = board.Board(10)
         self.testShip1.place(self.testBoard)
         self.testShip2.place(self.testBoard)
