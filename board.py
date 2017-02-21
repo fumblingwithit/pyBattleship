@@ -7,7 +7,6 @@ class Board(object):
         self.board = []
 
         for index in range(0, self.board_size):
-            value = str(index)
             self.board.append(['O'] * self.board_size)
 
     def is_on_board(self, x_coordinate, y_coordinate):
@@ -21,13 +20,7 @@ class Board(object):
 
     def update_piece(self, x_coordinate, y_coordinate, value):
         """Update the placement of the ship on the board"""
-#        print('Board: ' +self.print_board())
-        self.board[x_coordinate].insert(y_coordinate, value)
-        temp_board1 = self.board[x_coordinate][:y_coordinate].copy()
-        temp_board2 = self.board[x_coordinate][y_coordinate:].copy()
-        temp_board1.pop()
-        temp_board1.extend(temp_board2)
-        self.board[x_coordinate] = temp_board1.copy()
+        self.board[y_coordinate][x_coordinate] = value
 
     def place_piece(self, x_coordinate, y_coordinate):
         """Place a piece of the ship on the board"""
@@ -43,4 +36,4 @@ class Board(object):
     def is_piece_set(self, x_coordinate, y_coordinate):
         """Check to see if a piece is set """
         if self.is_on_board(x_coordinate, y_coordinate):
-            return bool(str(self.board[x_coordinate][y_coordinate]) != 'O')
+            return bool(str(self.board[y_coordinate][x_coordinate]) != 'O')
