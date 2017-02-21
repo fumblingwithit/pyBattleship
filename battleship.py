@@ -19,7 +19,7 @@ def start_game():
 def print_game():
     """Print the game"""
     print('-------------------')
-#    board.Board.print(COMPUTERBOARD)
+    board.Board.print(COMPUTERBOARD)
     print('===================')
     board.Board.print(PLAYERBOARD)
     print('-------------------')
@@ -30,11 +30,16 @@ def print_game():
 if __name__ == '__main__':
     start_game()
 #    print_game()
-    SHIP1.place(PLAYERBOARD)
+    SHIP1.place(COMPUTERBOARD)
     SHIP2.place(PLAYERBOARD)
 
-    print(SHIP1.attack(PLAYERBOARD, 3, 4))
-    print(SHIP2.attack(PLAYERBOARD, 5, 6))
+    print(SHIP1.attack(COMPUTERBOARD, 3, 4))
+    print(SHIP2.attack(PLAYERBOARD, 6, 5))
     print_game()
-#    SHIP1.show()
-#    SHIP2.show()
+    SHIP1.show()
+    SHIP2.show()
+    SHIP1.attack(COMPUTERBOARD, 2, 4)
+    SHIP2.attack(PLAYERBOARD, 2, 4)
+    print_game()
+    SHIP1.show()
+    SHIP2.show()
