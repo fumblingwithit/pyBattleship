@@ -1,6 +1,5 @@
-import board
-import ship
-
+import battleship.board as board
+import battleship.ship as ship
 
 BOARDSIZE = 10
 PLAYERBOARD = board.Board(BOARDSIZE)
@@ -29,7 +28,7 @@ def print_game():
 
 if __name__ == '__main__':
     start_game()
-#    print_game()
+    #    print_game()
     SHIP1.place(COMPUTERBOARD)
     SHIP2.place(PLAYERBOARD)
 

@@ -1,9 +1,8 @@
 import unittest
-import board
+import battleship.board as board
 
 
 class BoardTest(unittest.TestCase):
-
     def setUp(self):
         self.board_size = 10
         self.testBoard = board.Board(self.board_size)
